@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <style>
+        .target {
+            background-color: red;
+        }
+
+    </style>
+    <ul>
+        <!--/*
+        <li th:each="dto: ${list}">
+            [[${dto}]]
+         </li>*/-->
+
+
+        <!--/*반복문 상태(sttus) 객체
+        <li th:each="dto, status: ${list}">
+           [[${status.index}]] --- [[${dto}]]
+        </li>*/-->
+
+
+        <!--/* 삼항연산자 줄여서 사용가능 / '?'뒤에 결과만 반영되도록
+        <li th:each="dto, status: ${list}" th:class="${dto.sno % 5 ==0}?'target'" th:text="${dto}"></li>
+        */-->
+
+        <!--th:block : 별도의 태그가 필요하지 않음.-->
+        <th:block th:each="dto: ${list}">
+            <li th:text="${dto.sno % 5 == 0}?${dto.sno}:${dto.first}"></li>
+        </th:block>
+
+
+
+
+
+    </ul>
+</body>
+</html>

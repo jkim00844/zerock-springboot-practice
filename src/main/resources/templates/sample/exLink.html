@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <ul>
+        <li th:each="dto: ${list}">
+            <!--sno와 같은 파라미터를 '키와 값'형태로 사용가능-->
+            <a th:href="@{/sample/exView(sno=${dto.sno})}">[[${dto}]]</a>
+            <!-- java8time로 날짜 처리-->
+            [[${#temporals.format(dto.regTime, 'yyy/MM/dd')}]]
+        </li>
+    </ul>
+</body>
+</html>
