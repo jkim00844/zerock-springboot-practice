@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <th:block th:replace="~{/fragments/fragment3:: target(~{this:: #ulFirst}, ~{this:: #ulSecond})}"></th:block>
+    <!--"나는 fragment3 레이아웃을 쓸꺼야 /fragment3라는 함수 정의 해놨는데 거기 파라미터들을 이페이지에 있는 ulFirst, ulSecond 쓸거야"-->
+    <ul id="ulFirst">
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+    </ul>
+
+    <ul id="ulSecond">
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+
+</body>
+</html>
